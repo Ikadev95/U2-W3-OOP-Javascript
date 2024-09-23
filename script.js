@@ -54,6 +54,12 @@ form.addEventListener("submit", function(e){
         list.appendChild(listItem);
         listItem.innerText = `${pName.value} ${oName.value} ${species.value} ${breed.value}`
     }
+    else {
+        const list = document.getElementsByTagName('ul');
+        const listItem = document.createElement('li');
+        list[0].appendChild(listItem);
+        listItem.innerText = `${pName.value} ${oName.value} ${species.value} ${breed.value}`
+    }
 
     form.reset();
     pets.push(pet);
