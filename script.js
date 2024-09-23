@@ -43,8 +43,17 @@ form.addEventListener("submit", function(e){
     let oName = document.getElementById('ownerName');
     let species = document.getElementById('species');
     let breed = document.getElementById('breed');
+    let petCont = document.getElementById('petsContainer');
 
     const pet = new Pet (pName.value, oName.value ,species.value ,breed.value);
+
+    if ( !petCont.firstElementChild){
+        const list = document.createElement('ul');
+        petCont.appendChild(list);
+        const listItem = document.createElement('li');
+        list.appendChild(listItem);
+        listItem.innerText = `${pName.value} ${oName.value} ${species.value} ${breed.value}`
+    }
 
     form.reset();
     pets.push(pet);
